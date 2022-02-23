@@ -30,7 +30,9 @@ async function bootstrap() {
   //Make the static folder available for app use
   app.useStaticAssets(staticAssets);
 
-  //start the applicatino
+  
+
+  //start the application
   await app.listen(3000);
 }
 bootstrap();
