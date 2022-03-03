@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="grid-item-row-2">
-    <form class="box" id="createUserForm" action="/users" method="POST">
+    <form class="box" id="createUserForm" action="/citizen" method="POST">
       <fieldset id="createUserFormFieldSet" class="container">
         <div class="field">
           <label class="label">First name:</label>
@@ -61,19 +61,6 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Email:</label>
-          <div class="control has-icons-right">
-            <input
-              class="input"
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Email"
-              required
-            />
-          </div>
-        </div>
-        <div class="field">
           <label class="label">Date of birth:</label>
           <div class="control has-icons-right">
             <input
@@ -100,17 +87,102 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Address:</label>
+          <label class="label">Country of birth:</label>
           <div class="control has-icons-right">
             <input
               class="input"
-              id="address"
-              name="address"
+              id="countryofbirth"
+              name="countryofbirth"
               type="text"
-              placeholder="Address"
+              placeholder="Country of birth"
             />
           </div>
         </div>
+        <div class="field">
+          <label class="label">State of birth:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="stateofbirth"
+              name="stateofbirth"
+              type="text"
+              placeholder="State of birth"
+            />
+          </div>
+        </div>  
+        <div class="field">
+          <label class="label">Town of birth:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="Townofbirth"
+              name="Townofbirth"
+              type="text"
+              placeholder="Town of birth"
+            />
+          </div> 
+        </div>
+        <div class="field">
+          <label class="label">Residence Address:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="Residenceaddress"
+              name="Residenceaddress"
+              type="text"
+              placeholder="Residence Address"
+            />
+          </div>
+        </div> 
+        <div class="field">
+          <label class="label">Profession:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="Profession"
+              name="Profession"
+              type="text"
+              placeholder="Profession"
+            />
+          </div>
+        </div> 
+        <div class="field">
+          <label class="label">NIN:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="NIN"
+              name="NIN"
+              type="number"
+              placeholder="NIN"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">BVN:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="BVN"
+              name="BVN"
+              type="number"
+              placeholder="BVN"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Mobile Number:</label>
+          <div class="control has-icons-right">
+            <input
+              class="input"
+              id="mobilenumber"
+              name="mobilenumber"
+              type="number"
+              placeholder="mobilenumber"
+            />
+          </div>
+        <div>    
+                           
 
         <div class="field is-grouped">
           <div class="control">
@@ -143,7 +215,6 @@
   </div>
 </section>
 
-{% endblock %}
 
 <script>
   const createUserForm = document.getElementById('createUserForm');
@@ -203,7 +274,7 @@
     };
 
     //call fetch
-    fetch('/users', init)
+    fetch('/citizen', init)
       .then((response) => response.json())
       .then((data) => {
         //alert(JSON.stringify(data))
@@ -234,3 +305,5 @@
       });
   });
 </script>
+
+{% endblock %}
