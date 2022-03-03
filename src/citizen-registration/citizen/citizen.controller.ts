@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Render } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Render,
+} from '@nestjs/common';
 import { CitizenService } from './citizen.service';
 import { CreateCitizenDto } from './dto/create-citizen.dto';
 import { UpdateCitizenDto } from './dto/update-citizen.dto';
@@ -6,6 +15,10 @@ import { UpdateCitizenDto } from './dto/update-citizen.dto';
 @Controller('citizen')
 export class CitizenController {
   constructor(private readonly citizenService: CitizenService) {}
+
+  @Get('create')
+  @Render('users/create-citizen.html')
+  createForm() {}
 
   @Post()
   create(@Body() createCitizenDto: CreateCitizenDto) {

@@ -10,7 +10,7 @@
         <a href="/about-us">About Us</a>
       </div>
       <div>
-        <a href="/users/create" class="active">Add user</a>
+        <a href="/citizen/create" class="active">Add user</a>
       </div>
     </div>
     <div class="navigation-bar-right">
@@ -149,8 +149,7 @@
   const createUserForm = document.getElementById('createUserForm');
 
   createUserForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
+    event.preventDefault()
     //Get fields and check validities
     const firstName = document.getElementById('firstName').value;
     if (firstName == '') {
