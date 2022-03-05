@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn  } from 'typeorm';
+import { Identity} from 'src/citizen-registration/identity/entities/identity.entity'
 @Entity()
 export class Citizen {
   @PrimaryGeneratedColumn()
@@ -33,4 +34,8 @@ export class Citizen {
 
   @Column()
   Profession: string;
+
+  @JoinColumn()
+  @OneToOne(type => Identity, identity => identity.citizen)
+  identity: Identity;
 }

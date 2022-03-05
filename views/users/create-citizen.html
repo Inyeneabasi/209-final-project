@@ -236,21 +236,23 @@
       return false;
     }
 
-    const email = document.getElementById('email').value;
-    if (email == '') {
-      email.reportValidity();
-      return false;
-    }
+  
+    
 
     const dateOfBirth = document.getElementById('dateOfBirth').value;
     if (dateOfBirth == '') {
       dateOfBirth.reportValidity();
       return false;
     }
+  
 
     const nationality = document.getElementById('nationality').value;
 
-    const address = document.getElementById('address').value;
+    const residenceaddress = document.getElementById('residenceaddress').value;
+    if (residenceaddress == '') {
+      residenceaddress.reportValidity();
+      return false;
+    }
 
     //start the button spinner
     document.getElementById('submitCreateUserForm').classList.add('is-loading');
@@ -265,11 +267,14 @@
       body: JSON.stringify({
         firstName,
         middleName,
-        lastName,
-        email,
+        lastName,        
         dateOfBirth,
         nationality,
-        address,
+        countryofbirth,
+        stateofbirth,
+        Townofbirth
+        residenceaddress,
+        profession,
       }),
     };
 
